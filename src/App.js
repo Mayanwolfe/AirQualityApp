@@ -12,7 +12,7 @@ function App() {
   const getAirQuality = async (city) => {
     try {
       //Get your own free token from the from the World Air Quality Index Project API. Visit the link at the bottom of this page.
-      const response = await fetch(`https://api.waqi.info/feed/${city}/?token=INSERT_TOKEN_HERE`);
+      const response = await fetch(`https://api.waqi.info/feed/${city}/?token=${process.env.REACT_APP_AQI_API_TOKEN}`);
       const data = await response.json();
       console.log(data)
       
