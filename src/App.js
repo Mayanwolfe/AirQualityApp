@@ -11,7 +11,8 @@ function App() {
 
   const getAirQuality = async (city) => {
     try {
-      const response = await fetch(`https://api.waqi.info/feed/${city}/?token=1acab2af9421d362c35d95dd34b3b3292dc124e7`);
+      //Get your own free token from the from the World Air Quality Index Project API. Visit the link at the bottom of this page.
+      const response = await fetch(`https://api.waqi.info/feed/${city}/?token=INSERT_TOKEN_HERE`);
       const data = await response.json();
       console.log(data)
       
@@ -47,8 +48,9 @@ function App() {
           <PollutantInfo pollutant={airQualityData.dominentpol} />
         </>
       )}
-      
+
       <AirQualityLevelsTable />
+      <p>Location-specific API data sourced from the World Air Quality Index Project. <a href='https://aqicn.org/api/'>LINK</a></p>
     </div>
   );
 }
