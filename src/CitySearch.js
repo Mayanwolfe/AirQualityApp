@@ -9,7 +9,7 @@ const CitySearch = ({getAirQuality }) => {
 
   const handleSearch = (event) => {
     event.preventDefault();
-    const formattedCity = inputValue.replace(/ /g, "-");
+    const formattedCity = inputValue.trim().replace(/ /g, "-");
     getAirQuality(formattedCity);
   };
   return (
